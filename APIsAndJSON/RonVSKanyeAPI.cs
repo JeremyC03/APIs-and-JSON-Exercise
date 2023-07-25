@@ -25,7 +25,7 @@ namespace APIsAndJSON
             HttpClient client = new HttpClient();
             string kanyeURL = "https://api.kanye.rest/";
             string kanyeResponse = client.GetStringAsync(kanyeURL).Result;
-            string kanyeQuote = JObject.Parse(kanyeResponse).GetValue("quote").ToString();
+            var kanyeQuote = JObject.Parse(kanyeResponse).GetValue("quote").ToString();
             Console.WriteLine($"Kanye: {kanyeQuote}");
             Console.WriteLine();
         }
